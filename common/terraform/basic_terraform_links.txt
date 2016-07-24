@@ -49,9 +49,9 @@ terraform_link = {
 
 	#cost
 	energy = 5000
-	minerals = 2000
+	minerals = 2500
 	
-	# This should add up to 10; lack of materials = +3,000 minerals
+	# This should add up to 10
 	resources = {
 		sr_biological_materials = 4
 		sr_atmospheric_materials = 5
@@ -60,9 +60,7 @@ terraform_link = {
 	}
 	
 	condition = {
-		AND = {
-			has_technology = "tech_ocean_terraforming
-		}
+		has_technology = "tech_ocean_terraforming"
 	}
 }
 
@@ -72,18 +70,17 @@ terraform_link = {
 	to = "pc_tundra"
 	
 	energy = 5000
-	minerals = 5000
+	minerals = 2500
 	
 	resources = {
 		sr_biological_materials = 2
 		sr_atmospheric_materials = 5
+		sr_terran_materials = 1
 		sr_sculpting_nanobots = 2
 	}
 	
 	condition = {
-		AND = {
-			has_technology = "tech_tundra_terraforming"
-		}
+		has_technology = "tech_tundra_terraforming"
 	}
 }
 
@@ -92,26 +89,18 @@ terraform_link = {
 	from = "pc_ocean"
 	to = "pc_arctic"
 	
-	#cost
-	energy = 1500
+	energy = 5000
+	minerals = 2500
+	
 	resources = {
-		sr_terraform_gases = 2
-		sr_terraform_liquids = 2
+		sr_biological_materials = 2
+		sr_atmospheric_materials = 5
+		sr_terran_materials = 1
+		sr_sculpting_nanobots = 2
 	}
 	
 	condition = {
-		if = {
-			limit = {
-				OR = {
-					ideal_planet_class = pc_desert
-					ideal_planet_class = pc_tropical
-				}
-			}
-			has_technology = "tech_atmospheric_manipulation"
-			else = {
-				has_technology = "tech_terrestrial_sculpting"
-			}
-		}
+		has_technology = "tech_tundra_terraforming"
 	}
 }
 
@@ -475,17 +464,6 @@ terraform_link = {
 	}
 	
 	condition = {
-		if = {
-			limit = {
-				OR = {
-					ideal_planet_class = pc_continental
-					ideal_planet_class = pc_ocean
-				}
-			}
-			has_technology = "tech_atmospheric_manipulation"
-			else = {
-				has_technology = "tech_terrestrial_sculpting"
-			}
-		}
+		has_technology = "tech_nanobot_clouds"
 	}
 }
