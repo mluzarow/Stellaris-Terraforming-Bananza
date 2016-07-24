@@ -107,6 +107,14 @@ terraform_link = {
 	minerals = @standard_terraforming_cost_minerals
 	
 	resources = {
+		if = {
+			limit = {
+				has_technology = "tech_nanobot_clouds"
+			}
+			sr_nanobot_clouds = 10
+			
+			break = yes
+		}
 		sr_biological_materials = 2
 		sr_atmospheric_materials = 5
 		sr_terran_materials = 1
