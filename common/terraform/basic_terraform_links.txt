@@ -39,17 +39,27 @@
 ##                                                                                                 ##
 #####################################################################################################
 
+@standard_terraforming_cost_enegry = 5000
+@standard_terraforming_cost_minerals = 2500
+@standard_terraforming_time = 720
+
+@nonstandard_terraforming_cost_energy = 15000
+@nonstandard_terraforming_cost_minerals = 7500
+@nonstandard_terraforming_time = 1800
+
+@gaia_terraforming_cost_energy = 7500
+@gaia_terraforming_cost_minerals = 12000
+@gaia_terraforming_time = 360
+
 # Arctic -> Ocean
 terraform_link = {
 	from = "pc_arctic"
 	to = "pc_ocean"
 	
-	# Takes 2 years
-	duration = 720
+	duration = @standard_terraforming_time
 
-	#cost
-	energy = 5000
-	minerals = 2500
+	energy = @standard_terraforming_cost_enegry
+	minerals = @standard_terraforming_cost_minerals
 	
 	# This should add up to 10
 	resources = {
@@ -60,7 +70,7 @@ terraform_link = {
 	}
 	
 	condition = {
-		has_technology = "tech_ocean_terraforming"
+		has_technology = "tech_arctic_terraforming"
 	}
 }
 
@@ -69,8 +79,10 @@ terraform_link = {
 	from = "pc_arctic"
 	to = "pc_tundra"
 	
-	energy = 5000
-	minerals = 2500
+	duration = @standard_terraforming_time
+	
+	energy = @standard_terraforming_cost_enegry
+	minerals = @standard_terraforming_cost_minerals
 	
 	resources = {
 		sr_biological_materials = 2
@@ -80,7 +92,7 @@ terraform_link = {
 	}
 	
 	condition = {
-		has_technology = "tech_tundra_terraforming"
+		has_technology = "tech_arctic_terraforming"
 	}
 }
 
@@ -89,8 +101,10 @@ terraform_link = {
 	from = "pc_ocean"
 	to = "pc_arctic"
 	
-	energy = 5000
-	minerals = 2500
+	duration = @standard_terraforming_time
+	
+	energy = @standard_terraforming_cost_enegry
+	minerals = @standard_terraforming_cost_minerals
 	
 	resources = {
 		sr_biological_materials = 2
@@ -100,7 +114,7 @@ terraform_link = {
 	}
 	
 	condition = {
-		has_technology = "tech_tundra_terraforming"
+		has_technology = "tech_ocean_terraforming"
 	}
 }
 
