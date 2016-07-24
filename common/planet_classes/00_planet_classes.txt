@@ -1,35 +1,6 @@
-### EXAMPLE:
-#pc_tropical = {
-#	entity = "gaia_planet"
-#	entity_scale = 8.0
-#
-#	picture = pc_tropical	# Use tropical portrait art instead of gaia
-#
-#	atmosphere_color 		= hsv { 0.58	0.3 0.7 }
-#	atmosphere_intensity 	= 1.0
-#	atmosphere_width 		= 0.5
-#
-#	city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.tga"
-#
-#	min_distance_from_sun = 60
-#	max_distance_from_sun = 80
-#	spawn_odds = 10
-#
-#	extra_orbit_size = 0
-#	extra_planet_count = 0
-#
-#	chance_of_ring = 0.2
-#
-#	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
-#	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
-#
-#	colonizable = yes
-#	colonization_tech = { "tech_tropical_colonization@1" }
-#}
-###
-
-
-# Planet Variables
+#############################
+# Standard Planet Variables #
+#############################
 
 @planet_standard_scale = 11
 @habitable_planet_max_size = 25
@@ -285,15 +256,15 @@ pc_gas_giant = {
 	entity_scale = 14
 	icon_frame = 14
 
-	atmosphere_color 		= hsv { 0.1 0.15 1.1 }		#DONE
+	atmosphere_color 	= hsv { 0.1 0.15 1.1 }
 	atmosphere_intensity 	= 1.1
-	atmosphere_width 		= 0.5
+	atmosphere_width 	= 0.5
 
 	min_distance_from_sun = 40
 	max_distance_from_sun = 1000
 
 	spawn_odds = 6
-	extra_orbit_size = 1
+	extra_orbit_size = 4
 	extra_planet_count = 2
 
 	can_be_moon = no
@@ -301,11 +272,16 @@ pc_gas_giant = {
 
 	starting_planet = no
 
-	planet_size = { min = 20 max = 30 }
-	moon_size = { min = 8 max = 15 }
+	planet_size = {
+		min = 20
+		max = 30
+	}
+	moon_size = {
+		min = 8
+		max = 15
+	}
 
-	colonizable = yes
-	colonization_tech = { "tech_floating_cities" }
+	colonizable = no
 }
 
 pc_asteroid = {
@@ -333,12 +309,12 @@ pc_molten = {
 	entity_scale = @planet_standard_scale
 	icon_frame = 12
 
-	atmosphere_color 		= hsv { 0.05 0.65 1.4 }		#DONE
+	atmosphere_color 	= hsv { 0.05 0.65 1.4 }
 	atmosphere_intensity 	= 0.05
-	atmosphere_width 		= 1.0
+	atmosphere_width 	= 1.0
 
 	min_distance_from_sun = 0
-	max_distance_from_sun = 60
+	max_distance_from_sun = 40
 	spawn_odds = 10
 
 	extra_orbit_size = 0
@@ -346,11 +322,16 @@ pc_molten = {
 
 	chance_of_ring = 0
 
-	planet_size = { min = 14 max = 30 }
-	moon_size = { min = 6 max = 12 }
+	planet_size = {
+		min = 14
+		max = 30
+	}
+	moon_size = {
+		min = 6
+		max = 12
+	}
 
-	colonizable = yes
-	starting_planet = no
+	colonizable = no
 }
 
 pc_barren = {
@@ -358,9 +339,9 @@ pc_barren = {
 	entity_scale = @planet_standard_scale
 	icon_frame = 10
 
-	atmosphere_color 		= hsv { 0.1 0.4 0.7 }		#DONE
+	atmosphere_color 	= hsv { 0.1 0.4 0.7 }
 	atmosphere_intensity 	= 1.0
-	atmosphere_width 		= 0.5
+	atmosphere_width 	= 0.5
 
 	min_distance_from_sun = 40
 	max_distance_from_sun = 200
@@ -371,8 +352,14 @@ pc_barren = {
 
 	chance_of_ring = 0.2
 
-	planet_size = { min = 12 max = 30 }
-	moon_size = { min = 6 max = 10 }
+	planet_size = {
+		min = 12
+		max = 30
+	}
+	moon_size = {
+		min = 6
+		max = 10
+	}
 
 	colonizable = yes
 	colonization_tech = { "tech_droid_workers" }
@@ -384,9 +371,9 @@ pc_barren_cold = {
 	entity_scale = @planet_standard_scale
 	icon_frame = 9
 
-	atmosphere_color 		= hsv { 0.55 0.3 0.75 }		#DONE
+	atmosphere_color 	= hsv { 0.55 0.3 0.75 }
 	atmosphere_intensity 	= 1.0
-	atmosphere_width 		= 0.5
+	atmosphere_width 	= 0.5
 
 	min_distance_from_sun = 40
 	max_distance_from_sun = 200
@@ -397,12 +384,16 @@ pc_barren_cold = {
 
 	chance_of_ring = 0.2
 
-	planet_size = { min = 12 max = 30 }
-	moon_size = { min = 6 max = 10 }
+	planet_size = {
+		min = 12
+		max = 30
+	}
+	moon_size = {
+		min = 6
+		max = 10
+	}
 
-	colonizable = yes
-	colonization_tech = { "tech_droid_workers" }
-	starting_planet = no
+	colonizable = no
 }
 
 pc_toxic = {
@@ -410,9 +401,9 @@ pc_toxic = {
 	entity_scale = @planet_standard_scale
 	icon_frame = 11
 
-	atmosphere_color 		= hsv { 0.19 0.45 0.9 }		#DONE
+	atmosphere_color 	= hsv { 0.19 0.45 0.9 }
 	atmosphere_intensity 	= 0.1
-	atmosphere_width 		= 1.2
+	atmosphere_width 	= 1.2
 
 	min_distance_from_sun = 60
 	max_distance_from_sun = 110
@@ -424,22 +415,26 @@ pc_toxic = {
 
 	chance_of_ring = 0.2
 
-	planet_size = { min = 12 max = 25 }
-	moon_size = { min = 6 max = 10 }
+	planet_size = {
+		min = 12
+		max = 25
+	}
+	moon_size = {
+		min = 6
+		max = 10
+	}
 
-	colonizable = yes
-	colonization_tech = { "tech_droid_workers" }
-	starting_planet = no
+	colonizable = no
 }
 
 pc_frozen = {
-	entity = "frozen_planet"		#DONE
+	entity = "frozen_planet"
 	entity_scale = @planet_standard_scale
 	icon_frame = 13
 
-	atmosphere_color 		= hsv { 0.55 0.15 0.7 }
+	atmosphere_color 	= hsv { 0.55 0.15 0.7 }
 	atmosphere_intensity 	= 1.0
-	atmosphere_width 		= 0.5
+	atmosphere_width 	= 0.5
 
 	min_distance_from_sun = 120
 	max_distance_from_sun = 1000
@@ -450,17 +445,57 @@ pc_frozen = {
 
 	chance_of_ring = 0
 
-	planet_size = { min = 10 max = 25 }
-	moon_size = { min = 6 max = 10 }
+	planet_size = {
+		min = 10
+		max = 25
+	}
+	moon_size = {
+		min = 6
+		max = 10
+	}
 
-	colonizable = yes
-	colonization_tech = { "tech_droid_workers" }
-	starting_planet = no
+	colonizable = no
 }
 
-# ###########
-# Special Planets
-# ###########
+###################
+# Special Planets #
+###################
+
+pc_gaia = {
+	entity = "gaia_planet"
+	picture = pc_continental # there's no unique gaia_planet picture
+	tile_set = pc_continental
+	entity_scale = @planet_standard_scale
+	icon_frame = 8
+
+	atmosphere_color 	= hsv { 0.58	0.3 0.7 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 	= 0.5
+
+	city_color_lut = "gfx/portraits/misc/colorcorrection_tropical.dds"
+
+	min_distance_from_sun = 60
+	max_distance_from_sun = 95
+	spawn_odds = 0.5
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0.2
+
+	planet_size = {
+		min = @habitable_planet_min_size
+		max = @habitable_planet_max_size
+	}
+	moon_size = {
+		min = @habitable_moon_min_size
+		max = @habitable_moon_max_size
+	}
+
+	colonizable = yes
+	ideal = yes
+	starting_planet = no
+}
 
 pc_nuked = {
 	entity = "nuked_planet"
@@ -469,10 +504,9 @@ pc_nuked = {
 	entity_scale = @planet_standard_scale
 	icon_frame = 17
 
-
-	atmosphere_color 		= hsv { 0.6 0.4 0.5 }		#DONE
+	atmosphere_color 	= hsv { 0.6 0.4 0.5 }
 	atmosphere_intensity 	= 1.0
-	atmosphere_width 		= 0.85
+	atmosphere_width 	= 0.85
 
 	min_distance_from_sun = 60
 	max_distance_from_sun = 110
@@ -483,12 +517,18 @@ pc_nuked = {
 
 	chance_of_ring = 0.2
 
-	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
-	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+	planet_size = {
+		min = @habitable_planet_min_size
+		max = @habitable_planet_max_size
+	}
+	moon_size = {
+		min = @habitable_moon_min_size
+		max = @habitable_moon_max_size
+	}
 
-	starting_planet = no
 	colonizable = yes
 	colonization_tech = { "tech_atmospheric_manipulation" }
+	starting_planet = no
 }
 
 pc_shielded = {
@@ -581,35 +621,7 @@ pc_infested = {
 }
 
 
-pc_gaia = {
-	entity = "gaia_planet"
-	picture = pc_continental # there's no unique gaia_planet picture
-	tile_set = pc_continental
-	entity_scale = @planet_standard_scale
-	icon_frame = 8
 
-	atmosphere_color 		= hsv { 0.58	0.3 0.7 }
-	atmosphere_intensity 	= 1.0
-	atmosphere_width 		= 0.5
-
-	city_color_lut = "gfx/portraits/misc/colorcorrection_tropical.dds"
-
-	min_distance_from_sun = 60
-	max_distance_from_sun = 95
-	spawn_odds = 0.5
-
-	extra_orbit_size = 0
-	extra_planet_count = 0
-
-	chance_of_ring = 0.2
-
-	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
-	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
-
-	colonizable = yes
-	ideal = yes
-	starting_planet = no
-}
 
 #########
 # Stars #
