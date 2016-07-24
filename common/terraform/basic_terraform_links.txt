@@ -39,26 +39,6 @@
 ##                                                                                                 ##
 #####################################################################################################
 
-# terraform_link = {
-	# from = "pc_arctic"			#
-	# to = "pc_tundra"			# terraform from pc_arctic to pc_tundra
-
-	# duration = 10				# How long it will take in days. Leave this blank to use default value ( TERRAFORM_DEFAULT_DURATION_DAYS in defines )
-	
-	# # cost
-	# energy = 30
-	# resources = {
-		# sr_terraform_liquids = 2	#will cost 2 sr_terraform_liquids, you can use any strategic resource here
-	# }
-	
-	# # normal and-trigger
-	# # Scope is a country scope
-	# # from scope is a planet scope
-	# condition = {
-		# has_technology = "tech_atmospheric_manipulation"
-	# }
-# }
-
 # Arctic -> Ocean
 terraform_link = {
 	from = "pc_arctic"
@@ -68,21 +48,46 @@ terraform_link = {
 	duration = 720
 
 	#cost
-	energy = 1500
+	energy = 5000
+	minerals = 2000
+	
+	# This should add up to 10; lack of materials = +3,000 minerals
 	resources = {
-		sr_terraform_gases = 2
-		sr_terraform_liquids = 2
+		sr_biological_materials = 4
+		sr_atmospheric_materials = 5
+		sr_terran_materials = 0
+		sr_sculpting_nanobots = 1
 	}
 	
 	condition = {
 		AND = {
-			has_technology = "tech_atmospheric_manipulation"
-			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_ocean_terraforming
 		}
 	}
 }
 
-# Ocean to Arctic
+# Arctic to Tundra
+terraform_link = {
+	from = "pc_arctic"
+	to = "pc_tundra"
+	
+	energy = 5000
+	minerals = 5000
+	
+	resources = {
+		sr_biological_materials = 2
+		sr_atmospheric_materials = 5
+		sr_sculpting_nanobots = 2
+	}
+	
+	condition = {
+		AND = {
+			has_technology = "tech_tundra_terraforming"
+		}
+	}
+}
+
+# Ocean -> Arctic
 terraform_link = {
 	from = "pc_ocean"
 	to = "pc_arctic"
@@ -136,31 +141,7 @@ terraform_link = {
 	}
 }
 
-# Arctic to Tundra
-terraform_link = {
-	from = "pc_arctic"
-	to = "pc_tundra"
-	
-	energy = 1500
-	resources = {
-		sr_terraform_liquids = 3
-	}
 
-	condition = {
-		if = {
-			limit = {
-				OR = {
-					ideal_planet_class = pc_tropical
-					ideal_planet_class = pc_continental
-				}
-			}
-			has_technology = "tech_atmospheric_manipulation"
-			else = {
-				has_technology = "tech_terrestrial_sculpting"
-			}
-		}
-	}
-}
 
 # Tundra to Arid
 terraform_link = {
